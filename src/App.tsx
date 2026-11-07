@@ -14,6 +14,8 @@ type IconName =
 
 type Service = "Tours & Packages" | "Study Abroad" | "Migration";
 
+const publicAsset = (filename: string) => `${import.meta.env.BASE_URL}${filename}`;
+
 const services: Service[] = ["Tours & Packages", "Study Abroad", "Migration"];
 
 const destinations = [
@@ -21,28 +23,28 @@ const destinations = [
     category: "Nature & adventure",
     country: "Pakistan",
     name: "Hunza & Skardu",
-    image: "/hunza-hero.jpg",
+    image: publicAsset("hunza-hero.jpg"),
     alt: "Snow-capped Karakoram mountains above the green Hunza Valley",
   },
   {
     category: "Culture & discovery",
     country: "Türkiye",
     name: "Discover Türkiye",
-    image: "/istanbul.jpg",
+    image: publicAsset("istanbul.jpg"),
     alt: "Istanbul's historic skyline and waterfront at sunset",
   },
   {
     category: "City escape",
     country: "United Arab Emirates",
     name: "The Dubai Escape",
-    image: "/dubai.jpg",
+    image: publicAsset("dubai.jpg"),
     alt: "Dubai skyline rising above the waterfront",
   },
   {
     category: "Island getaway",
     country: "Maldives",
     name: "Magical Maldives",
-    image: "/maldives.jpg",
+    image: publicAsset("maldives.jpg"),
     alt: "Overwater villas on a tropical Maldives lagoon",
   },
 ];
@@ -228,7 +230,12 @@ function App() {
 
       <main>
         <section aria-labelledby="hero-title" className="hero" id="home">
-          <img alt="" className="hero-image" fetchPriority="high" src="/hunza-hero.jpg" />
+          <img
+            alt=""
+            className="hero-image"
+            fetchPriority="high"
+            src={publicAsset("hunza-hero.jpg")}
+          />
           <div className="hero-shade" />
           <div className="container hero-inner">
             <div className="hero-copy">
@@ -438,7 +445,7 @@ function App() {
             </div>
             <div className="future-grid">
               <article className="future-card study-card" id="study-abroad">
-                <img alt="" loading="lazy" src="/istanbul.jpg" />
+                <img alt="" loading="lazy" src={publicAsset("istanbul.jpg")} />
                 <div className="future-card-shade" />
                 <div className="future-card-content">
                   <span className="future-icon">
@@ -458,7 +465,7 @@ function App() {
                 </div>
               </article>
               <article className="future-card migration-card" id="migration">
-                <img alt="" loading="lazy" src="/dubai.jpg" />
+                <img alt="" loading="lazy" src={publicAsset("dubai.jpg")} />
                 <div className="future-card-shade" />
                 <div className="future-card-content">
                   <span className="future-icon">
