@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint src/App.tsx src/main.tsx",
+    "lint": "eslint src",
     "format": "prettier --write ."
   },
   "dependencies": {
